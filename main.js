@@ -63,11 +63,13 @@ function addStars() {
 }
 const stars = Array(400).fill().forEach(addStars);
 
-const moontexture = new THREE.TextureLoader().load("images/moon.jpg");
+const moontexture = new THREE.TextureLoader().load("images/moon2.jpg");
+const moon_bump = new THREE.TextureLoader().load("images/normal.jpg");
 const moon = new THREE.Mesh(
   new THREE.SphereGeometry(1, 32, 32),
   new THREE.MeshStandardMaterial({
     map: moontexture,
+    normalMap: moon_bump,
   })
 );
 moon.position.set(10, 10, 0);
